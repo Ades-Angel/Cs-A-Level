@@ -1,14 +1,6 @@
-import os
-import subprocess
+import Terminal_clear
 import time
 
-def clear():
-  if os.name in ('nt','dos'):
-    subprocess.call("cls")
-  elif os.name in ('linux','osx','posix'):
-    subprocess.call("clear")
-  else:
-    print("\n") * 120
 
 def user_input():
   global number
@@ -16,7 +8,7 @@ def user_input():
   print()
   time.sleep(4)
   while True:
-    clear()
+    Terminal_clear.clear()
     number = int(input('Please enter a number: '))
     if number < 0:
       print('Factorial only works for psotive number')
