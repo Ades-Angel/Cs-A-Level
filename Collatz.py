@@ -22,9 +22,9 @@ Enter a 0 to quit the program.''')
     if number > 0:
       print()
       print("The Collatz sequence is:")
-      print(recursion_collatz(number))
+      recursion_collatz(number)
       print('The count is:', count)
-      time.sleep(6)
+      time.sleep(3)
     elif number == 0:
       break
     else:
@@ -44,7 +44,7 @@ def recursion_collatz(number):
     else:
       number = number//2
       count = count + 1
-  print(1)
+  print(1 end=' ')
 
 
 user_input()
