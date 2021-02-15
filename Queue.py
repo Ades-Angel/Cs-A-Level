@@ -1,19 +1,8 @@
 from collections import deque
-import os
-import subprocess
+import Terminal_clear
 import time
 
-
-def clear():
-  if os.name in ('nt','dos'):
-    subprocess.call("cls")
-  elif os.name in ('linux','osx','posix'):
-    subprocess.call("clear")
-  else:
-    print("\n") * 120
-
-
-queue = deque([' ', ' ', ' '])
+queue = deque([])
 
 
 def queue_choices():
@@ -49,15 +38,15 @@ Please enter an operation.
     elif operation_choice == 'add vip':
       add_vip()
     elif operation_choice == 'exit':
-      clear()
+      Terminal_clear.clear()
       break
     else:
       print('Invalid option, please enter the number of the operation.')
-    clear()
+    Terminal_clear.clear()
 
 
 def enqueue():
-  clear()
+  Terminal_clear.clear()
   if set_max == True and size == len(queue):
     print('The queue is full.')
     time.sleep(3)
@@ -67,11 +56,11 @@ def enqueue():
     print(item_to_add, 'was added to the queue.')
     print(queue)
     time.sleep(3)
-    clear()
+    Terminal_clear.clear()
 
 
 def dequeue():
-  clear()
+  Terminal_clear.clear()
   if not queue:
     print('Queue is empty')
     time.sleep(2)
@@ -80,17 +69,17 @@ def dequeue():
     print()
     print(queue)
     time.sleep(3)
-  clear()
+  Terminal_clear.clear()
 
 
 def add_vip():
-  clear()
+  Terminal_clear.clear()
   vip_to_add = input('What vip would you like to add to the queue:')
   queue.appendleft(vip_to_add)
   print(vip_to_add, 'was added to the queue.')
   print(queue)
   time.sleep(5)
-  clear()
+  Terminal_clear.clear()
 
 
 queue_choices()
