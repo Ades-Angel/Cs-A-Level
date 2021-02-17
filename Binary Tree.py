@@ -57,7 +57,6 @@ Add
 Search 
 Delete # Not working for now
 Exit ''')
-    print()
     choice = input()
     operation_choice = choice.lower()
     Terminal_clear.clear()
@@ -67,6 +66,7 @@ Exit ''')
       root.insert(number)
       Terminal_clear.clear()
       print('This is your Tree: ')
+      print()
       root.PrintTree()
       time.sleep(3)
     elif operation_choice == 'search':
